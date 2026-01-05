@@ -1,0 +1,271 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+% LaTeX Template
+% Version 1.0 (28/1/19)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{developercv} % Default font size, values from 8-12pt are recommended
+
+%----------------------------------------------------------------------------------------
+%  HEADER / FOOTER	
+%----------------------------------------------------------------------------------------
+
+\pagestyle{fancy}
+
+\fancyhf{} % No horizontal rule in header
+\renewcommand{\headrulewidth}{0pt}
+\usepackage{comment}
+
+
+\pagenumbering{gobble}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\color{textcolor}
+\pagecolor{secondary}\afterpage{\nopagecolor}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+%\begin{minipage}[t]{0.45\textwidth} % 45% of the page width for name
+\begin{minipage}[t]{0.6\textwidth} % 60% of the page width for name and job title
+    \vspace{-\baselineskip} % Required for vertically aligning minipages
+    \colorbox{maincolor}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Philipp Kurrle}}}}} % Name
+    \vspace{6pt}
+    {\huge Softwareentwickler} % Career or current job title
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.35\textwidth} % 35% of the page width for address and contact details
+    \vspace{-\baselineskip} % Required for vertically aligning minipages
+    \icon{At}{12}{\underline{\href{mailto:philippk@mailbox.org}{philippk@mailbox.org}}}\\
+    \icon{Phone}{12}{+49 176 41234197}\\
+    \icon{MapMarker}{12}{Augustenstr. 57, 70178, Stuttgart}\\
+\end{minipage}
+
+\vspace{0.5cm}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
+
+
+\begin{comment}
+\begin{minipage}[t]{0.4\textwidth} % 40% of the page width for the introduction text
+
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	
+    
+    \cvsect{WhoAmI?}
+	
+	 \texttt{Hallo Welt} \emoji{waving-hand} \\
+        \vskip 0.03in
+        Ich studiere \textit{Software Technology} an der Hochschule für Technik in Stuttgart. 
+        Hiermit möchte mich gerne für die Abschlussarbeiten im Umfeld von EV Ladestrategien bewerben. 
+    	% I am a motivated Software Technology student from Stuttgart, Germany.  
+    	%Currently I am in the last semester and want to do this internship before writing my thesis.  \\
+	    %I am Philipp from Germany. Let me introduce myself in this short video:\\ 
+        % \vskip 0.03in
+    	% \color{maincolor}\underline{\url{https://youtu.be/Pn2I-Kv7kpc}}
+    	% \textbf{Favorite artist:} Giant Rooks \\
+    	% \textbf{Time listened last year} 414h
+\end{minipage}
+\hfill % Whitespace between
+\begin{minipage}[t]{0.5\textwidth} % 50% of the page for the skills bar chart
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+    \cvsect{Warum ich für ihre Thesis qualifiziert bin}
+
+	\begin{barchart}{5.5}
+		\baritem{Java}{100}{~5 Jahre}
+		\baritem{Softwaredesign in UML}{80}{bachelor, master, praxis}
+		\baritem{REST}{80}{master, praxis}
+		\baritem{Netzwerkkommunikation}{70}{bachelor}
+		\baritem{Lernbereitschaft}{100}{100\%!}
+	\end{barchart}
+\end{minipage}
+
+\end{comment}
+% \cvsect{Software \& Tools}
+
+\begin{comment}
+
+\begin{center}
+	\bubbles{
+	% ?
+	6/SpringBoot, 
+    6/Linux, 
+	5/CI\slash CD, 
+	5/DevOps, 
+	5/GitLab, 
+	5/Maven, 
+	5/Scrum, 
+	5/Kafka,
+	4/Docker, 
+	3/REST,  
+	3/Kubernetes
+	}
+\end{center}
+
+\end{comment}
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\vspace{5pt}
+
+\cvsect{Arbeitserfahrung}
+
+\begin{entrylist}
+    \entry
+		{Mai. 2022 --\\heute\\\footnotesize{Vollzeit}}
+		{Job: R\&D Engineer}
+		{Advantest GmBh}
+		{
+        - TBD
+		\space\space\skills{Java,\slashsep}}
+    \entry
+		{Mai 2020 --\\ Mai 2022\\\footnotesize{Voll- \& Teilzeit}}
+		{HiWi \& Thesis: Softwareentwicklung}
+		{Fraunhofer IPA}
+		{
+        Entwicklung einer App zur Simulation von Metall-Biegeprozessen sowie Master-Thesis\\
+		\space\space\skills{Flutter,\slashsep,Dart}}
+	\entry
+		{Sep. 2020 --\\Mär. 2022\\\footnotesize{Voll- \& Teilzeit}}
+		{Praktikum \& Werkstudent: Softwareentwicklung}
+		{Porsche AG}
+		{
+		Entwicklung einer Java Anwendung zur Berechnung von KPI's aus verschiedenen \\ 
+		Bordnetz-Datenquellen. Praktikum und zwei weitere Semester als Werkstudent
+		\\ 
+		\space\space\skills{Java,\slashsep,Spring Boot,\slashsep,JavaFX,\slashsep,CI\slash CD}}
+	\entry
+		{Mär. 2019 -- \\Sep. 2019\\\footnotesize{Teilzeit}}
+		{Werkstudent: Softwareentwicklung}
+		{Syngenio AG}
+		{
+		- Mitarbeit an Entwicklung eines Antragsstrecken-Builders für den Bankensektor \\
+		\skills{React,\slashsep,TypeScript,\slashsep,Scrum,\slashsep,Storybook,\slashsep,Linux}}
+	\entry
+		{Sep. 2018 -- \\Feb. 2019\\\footnotesize{Voll- \& Teilzeit}}
+		{Praktikum \& Werkstudent: Entwicklung Anlysesysteme}
+		{S-Management Services}
+		{
+		% - Internship as part of my bachelor's degree \\
+		Praktikum im Bereich IT-Projektmanagements einer BI-Plattform im Bankensektor. Stipendium für sehr gute Leistungen \& Semester als Werkstudent\\
+		\skills{Business Intelligence,\slashsep,IT-Projekt Management\slashsep,Requirements Engineering}}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\vspace{5pt}
+
+\cvsect{Bildungsweg}
+
+\begin{entrylist}
+	\entry
+		{Sep. 2020 --\\Heute\\ \footnotesize{Stuttgart}}
+		{Master: Software Technology}
+		{Hochschule für Technik}
+		{
+		Internationaler Master abgeschlossen mit Note: 1,8 (M.Sc.)
+		}
+	\entry
+		{Aug. 2019 --\\Dez. 2019\\ \footnotesize{Paisley}}
+		{Auslandssemester: Applied Computing}
+		{University of the West of Scotland}
+		{
+		Fokus auf Webentwicklung und Projektmanagement \\ 
+		}
+	\entry
+		{Okt. 2016 --\\Mai 2020\\ \footnotesize{Stuttgart}}
+		{Bachelor: Wirtschaftsinformatik}
+		{Hochschule der Medien}
+		{
+		Praxisorientierter Studiengang abgeschlossen mit Note: 1,9 (B.Sc.)\\
+		% - Fokus auf Datenverarbeitung im Unternehmensumfeld \\
+		%- Bachelor thesis topic: \textit{"Development of an event-driven architecture in the BPM environment based on Apache Kafka"}
+		}
+\end{entrylist}
+
+
+\vspace{5pt}
+
+\cvsect{Weiteres}
+
+\begin{entrylist}
+	\entry
+		{Jan. 2024--\\ mind. 2028\\ \footnotesize{Stuttgart}}
+		{Ehrenamt: Schöffentätigkeit}
+		{Landgericht Stuttgart}
+		{
+		Tätigkeit als ehrenamtlicher Richter in Hauptverfahren von Strafprozessen. Freistellung für Gerichtstermine notwendig \\
+		}
+  	\entry
+		{Dez. 2024\\ \footnotesize{Stuttgart}}
+		{Hobby: WSET (Wine \& Spirit Education Trust)}
+		{WSET \& Vinophilium Esslingen}
+		{
+		Sommelierausbildung Level 1 \\ 
+		}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{comment}
+    
+
+\vspace{30pt}
+
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\cvsect{Sprachen}
+	
+	\textbf{Deutsch} - Muttersprache\\
+	\textbf{Englisch} - Level: C1. Ich bin es gewohnt, in internationalen, interkulturellen Teams zu arbeiten. \\
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\cvsect{Hobbies}
+	
+    Im Kontrast zum Beruf mache ich gerne Urlaub in der Natur. Segeln, Kanu oder wandern. 	
+    Ich programmiere auch gerne in meiner Freizeit und interessiere mich für Linux.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\cvsect{Letzte Kurse}
+	
+	- Spring Boot Kurs (Baeldung) \\
+	- "Intercultural competence" \\Seminar \\
+	- GUIs mit JavaFX (Udemy)
+\end{minipage}
+
+\end{comment}
+
+%----------------------------------------------------------------------------------------
+\end{document}
