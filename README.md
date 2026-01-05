@@ -4,36 +4,40 @@ Personal website built with [JBake](https://jbake.org/) and deployed to GitHub P
 
 ## Building Locally
 
-### Prerequisites
-- Java 17 or later
-- Maven 3.6+
+### Using JBake CLI
 
-### Build Commands
-
-Generate the site:
+Install JBake:
 ```bash
-mvn clean generate-resources
+# Using SDKMAN
+sdk install jbake
+
+# Or download from https://jbake.org/download.html
 ```
 
-Or use JBake Maven plugin directly:
+Build the site:
 ```bash
-mvn jbake:generate
+jbake -b
 ```
 
-Preview the site locally:
+Preview locally:
 ```bash
-mvn jbake:inline
+jbake -s
 ```
 
 The site will be generated in the `output/` directory.
 
 ## Deployment
 
-This site is automatically deployed to GitHub Pages using GitHub Actions. Every push to the `main` (or `master`) branch triggers a build and deployment.
+This site is automatically deployed to GitHub Pages. The `output/` directory is committed to the repository, and GitHub Actions deploys it directly.
 
-### Manual Deployment
+### Workflow
 
-You can also trigger a deployment manually from the GitHub Actions tab in your repository.
+1. Build your site locally with JBake
+2. Commit the `output/` directory
+3. Push to `main` or `master` branch
+4. GitHub Actions automatically deploys to GitHub Pages
+
+You can also trigger a deployment manually from the GitHub Actions tab.
 
 ## GitHub Pages Setup
 
