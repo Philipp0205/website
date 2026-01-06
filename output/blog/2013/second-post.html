@@ -1,77 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>Second Post</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-    <meta name="generator" content="JBake">
-
-    <!-- Le styles -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../css/asciidoctor.css" rel="stylesheet">
-    <link href="../../css/base.css" rel="stylesheet">
-    <link href="../../css/prettify.css" rel="stylesheet">
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="../../js/html5shiv.min.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
-    <link rel="shortcut icon" href="../../favicon.ico">
-  </head>
-  <body onload="prettyPrint()">
-    <div id="wrap">
-	
-	<!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="../../">JBake</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../about.html">About</a></li>
-            <li><a href="../../feed.xml">Subscribe</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-            <li><a href="../../archive.html">Archive</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <meta name="description" content="Personal Blog von Philipp Kurrle - Softwareentwickler aus Stuttgart">
+  <meta name="author" content="Philipp Kurrle">
+  <meta name="generator" content="JBake">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link href="../../css/modern.css" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="../../feed.xml">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
     <div class="container">
-	<div class="page-header">
-		<h1>Second Post</h1>
-	</div>
+      <a href="../../index.html" class="navbar-brand">
+        <span class="logo-icon">PK</span>
+        Philipp Kurrle
+      </a>
+      
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../../index.html">Blog</a></li>
+        <li><a href="../../about.html">Über mich</a></li>
+        <li><a href="../../archive.html">Archiv</a></li>
+        <li><a href="../../feed.xml">RSS</a></li>
+      </ul>
+    </div>
+  </nav>
 
-	<p><em>25 August 2013</em></p>
+  <main>
+    <article class="container-narrow">
+      <!-- Post Header -->
+      <header class="post-header">
+        <h1>Test</h1>
+        <div class="post-meta">
+          <span>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: -2px; margin-right: 4px;"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z"/></svg>
+            06. January 2025          </span>
+                      <span>
+                              <span class="tag">blog</span>
+                          </span>
+                  </div>
+      </header>
 
-	<p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel diam purus. Curabitur ut nisi lacus.</p>
+      <!-- Post Content -->
+      <div class="post-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel diam purus. Curabitur ut nisi lacus.</p>
 <ul>
 <li><a href="http://example.org">http://example.org</a></li>
 <li><a href="http://example.org">Example.org</a></li>
@@ -83,26 +75,44 @@ ligula vehicula et iaculis sem placerat. Fusce dictum, metus at volutpat lacinia
 id auctor arcu enim eu augue. Donec ultrices turpis in mi imperdiet ac venenatis sapien sodales. In<br />
 consequat imperdiet nunc quis bibendum. Nulla semper, erat quis ornare tristique, lectus massa posuere<br />
 libero, ut vehicula lectus nunc ut lorem. Aliquam erat volutpat.</p>
-</p>
+      </div>
 
-	<hr />
-	
-		</div>
-		<div id="push"></div>
-    </div>
-    
-    <div id="footer">
-      <div class="container">
-        <p class="muted credit">&copy; 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.7.0</a></p>
+      <!-- Post Footer -->
+      <hr style="margin: 3rem 0;">
+      
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="../../index.html" class="btn btn-outline">
+          ← Zurück zum Blog
+        </a>
+        <a href="../../archive.html">
+          Alle Beiträge →
+        </a>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2024 Philipp Kurrle. Built with <a href="http://jbake.org">JBake</a> &amp; Pebble.</p>
+        <div class="footer-links">
+          <a href="../../feed.xml">RSS Feed</a>
+          <a href="mailto:philippk@mailbox.org">Kontakt</a>
+          <a href="https://github.com/philippkurrle" target="_blank" rel="noopener">GitHub</a>
+        </div>
       </div>
     </div>
-    
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../js/jquery-1.11.1.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/prettify.js"></script>
-    
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
   </body>
 </html>
