@@ -1,0 +1,37 @@
+{% include "header.peb" %}
+
+    <div class="container-narrow">
+      <header class="page-header">
+        <h1>Archiv</h1>
+        <p class="description">Alle Blogbeiträge chronologisch sortiert</p>
+      </header>
+
+      {% set last_month = "" %}
+      {% for post in published_posts %}
+        {% set current_month = post.date | date("MMMM yyyy") %}
+        
+        {% if current_month != last_month %}
+          {% if last_month != "" %}
+            </ul>
+          </section>
+          {% endif %}
+          <section class="archive-section">
+            <h2>{{ current_month }}</h2>
+            <ul class="archive-list">
+        {% endif %}
+        
+        <li>
+          <span class="date">{{ post.date | date("dd.") }}</span>
+          <a href="{{ content.rootpath | default("") }}{{ post.uri }}">{{ post.title }}</a>
+        </li>
+        
+        {% set last_month = current_month %}
+      {% endfor %}
+      
+      {% if last_month != "" %}
+            </ul>
+          </section>
+      {% endif %}
+    </div>
+
+{% include "footer.peb" %}

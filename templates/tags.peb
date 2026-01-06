@@ -1,0 +1,28 @@
+{% include "header.peb" %}
+
+{% include "menu.peb" %}
+
+<div class="page-header">
+	<h1>Tag: {{ tag }}</h1>
+</div>
+
+{% set last_month = "" %}
+{% for post in tag_posts %}
+	{% set current_month = post.date | date("MMMM yyyy") %}
+	
+	{% if last_month != "" and current_month != last_month %}
+		</ul>
+		<h4>{{ current_month }}</h4>
+		<ul>
+	{% elseif last_month == "" %}
+		<h4>{{ current_month }}</h4>
+		<ul>
+	{% endif %}
+	
+	<li>{{ post.date | date("dd") }} - <a href="{{ content.rootpath }}{{ post.uri }}">{{ post.title }}</a></li>
+	
+	{% set last_month = current_month %}
+{% endfor %}
+</ul>
+
+{% include "footer.peb" %}

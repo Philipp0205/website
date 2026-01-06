@@ -1,0 +1,26 @@
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2024 Philipp Kurrle. Built with <a href="http://jbake.org">JBake</a> &amp; Pebble.</p>
+        <div class="footer-links">
+          <a href="{{ content.rootpath | default("") }}feed.xml">RSS Feed</a>
+          <a href="mailto:philippk@mailbox.org">Kontakt</a>
+          <a href="https://github.com/philippkurrle" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
+  </body>
+</html>

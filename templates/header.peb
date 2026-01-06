@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ content.title | default("Philipp Kurrle") }}</title>
+  <meta name="description" content="{{ content.description | default("Personal Blog von Philipp Kurrle - Softwareentwickler aus Stuttgart") }}">
+  <meta name="author" content="Philipp Kurrle">
+  <meta name="generator" content="JBake">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link href="{{ content.rootpath | default("") }}css/modern.css" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ content.rootpath | default("") }}favicon.ico">
+  
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ content.rootpath | default("") }}feed.xml">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="{{ content.rootpath | default("") }}index.html" class="navbar-brand">
+        <span class="logo-icon">PK</span>
+        Philipp Kurrle
+      </a>
+      
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="nav-links" id="navLinks">
+        <li><a href="{{ content.rootpath | default("") }}index.html">Blog</a></li>
+        <li><a href="{{ content.rootpath | default("") }}about.html">Über mich</a></li>
+        <li><a href="{{ content.rootpath | default("") }}archive.html">Archiv</a></li>
+        <li><a href="{{ content.rootpath | default("") }}feed.xml">RSS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>

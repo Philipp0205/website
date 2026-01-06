@@ -1,8 +1,9 @@
-title=Second Post
-date=2013-08-25
+title=Test
+date=2025-01-06
 type=post
 tags=blog
 status=published
+summary=Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel diam purus.
 ~~~~~~
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel diam purus. Curabitur ut nisi lacus.

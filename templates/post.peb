@@ -1,0 +1,40 @@
+{% include "header.peb" %}
+
+    <article class="container-narrow">
+      <!-- Post Header -->
+      <header class="post-header">
+        <h1>{{ content.title }}</h1>
+        <div class="post-meta">
+          <span>
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" style="vertical-align: -2px; margin-right: 4px;"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z"/></svg>
+            {{ content.date | date("dd. MMMM yyyy") }}
+          </span>
+          {% if content.tags is defined %}
+            <span>
+              {% for tag in content.tags %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </span>
+          {% endif %}
+        </div>
+      </header>
+
+      <!-- Post Content -->
+      <div class="post-content">
+        {{ content.body | raw }}
+      </div>
+
+      <!-- Post Footer -->
+      <hr style="margin: 3rem 0;">
+      
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="{{ content.rootpath | default("") }}index.html" class="btn btn-outline">
+          ← Zurück zum Blog
+        </a>
+        <a href="{{ content.rootpath | default("") }}archive.html">
+          Alle Beiträge →
+        </a>
+      </div>
+    </article>
+
+{% include "footer.peb" %}
