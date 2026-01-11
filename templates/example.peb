@@ -1,0 +1,71 @@
+{# This is a Pebble template example #}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ pageTitle }}</title>
+</head>
+<body>
+    {# Navigation block #}
+    {% block navigation %}
+        <nav>
+            {% for item in menuItems %}
+                <a href="{{ item.url }}">{{ item.name }}</a>
+            {% endfor %}
+        </nav>
+    {% endblock %}
+
+    {# Main content #}
+    {% block content %}
+        <h1>Welcome {{ user.name }}!</h1>
+        
+        {% if user.isAdmin %}
+            <p>You have admin privileges.</p>
+        {% elseif user.isModerator %}
+            <p>You have moderator privileges.</p>
+        {% else %}
+            <p>You are a regular user.</p>
+        {% endif %}
+
+        {# Display items #}
+        {% for product in products %}
+            <div class="product">
+                <h2>{{ product.name }}</h2>
+                <p>Price: {{ product.price | currency }}</p>
+                {% if product.inStock %}
+                    <button>Add to Cart</button>
+                {% else %}
+                    <span class="out-of-stock">Out of Stock</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        {# Macro example #}
+        {% macro input(name, value, type = "text") %}
+            <input type="{{ type }}" name="{{ name }}" value="{{ value }}" />
+        {% endmacro %}
+
+        {# Using the macro #}
+        {{ input("username", user.username) }}
+        {{ input("email", user.email, "email") }}
+
+        {# Filter example #}
+        {% filter upper %}
+            This text will be uppercase
+        {% endfilter %}
+
+        {# Set example #}
+        {% set greeting = "Hello, " ~ user.name %}
+        <p>{{ greeting }}</p>
+
+        {# Verbatim example #}
+        {% verbatim %}
+            This {{ will not }} be parsed as Pebble syntax
+        {% endverbatim %}
+    {% endblock %}
+
+    {# Footer #}
+    <footer>
+        <p>&copy; {{ "now" | date("Y") }} My Company</p>
+    </footer>
+</body>
+</html>
