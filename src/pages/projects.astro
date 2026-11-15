@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { projects, visibleDescription } from '../data/projects';
+---
+
+<BaseLayout title="Projekte" description="Projekte von Philipp Kurrle" nav="projects">
+  <div class="container">
+    <header class="page-header">
+      <h1>Projekte</h1>
+    </header>
+
+    <div class="project-grid">
+      {
+        projects.map((project) => {
+          const description = visibleDescription(project);
+          return (
+            <article class="project-card">
+              <h2>{project.url ? <a href={project.url} target="_blank" rel="noopener">{project.name}</a> : project.name}</h2>
+              {description && <p>{description}</p>}
+              {
+                (project.url || project.repo) && (
+                  <p class="project-links mb-0">
+                    {project.url && <a href={project.url} target="_blank" rel="noopener">Ansehen →</a>}
+                    {project.repo && project.repo !== project.url && (
+                      <a href={project.repo} target="_blank" rel="noopener">Repository →</a>
+                    )}
+                  </p>
+                )
+              }
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</BaseLayout>
