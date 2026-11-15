@@ -154,22 +154,22 @@ test('dark mode toggle switches theme and remembers the choice', async ({ page }
   await page.emulateMedia({ colorScheme: 'light' });
   await page.goto(`${B}/`);
   const bg = () => page.evaluate(() => getComputedStyle(document.body).backgroundColor);
-  expect(await bg()).toBe('rgb(255, 255, 255)');
+  expect(await bg()).toBe('rgb(247, 246, 241)');
 
   await page.locator('#themeToggle').click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-  expect(await bg()).toBe('rgb(17, 24, 39)');
+  expect(await bg()).toBe('rgb(14, 20, 17)');
 
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-  expect(await bg()).toBe('rgb(17, 24, 39)');
+  expect(await bg()).toBe('rgb(14, 20, 17)');
   expect(await page.evaluate(() => localStorage.getItem('theme'))).toBe('dark');
 });
 
 test('prefers-color-scheme: dark is respected without a saved choice', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'dark' });
   await page.goto(`${B}/`);
-  expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(17, 24, 39)');
+  expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(14, 20, 17)');
 });
 
 test('no third-party requests', async ({ page }) => {

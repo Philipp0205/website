@@ -29,7 +29,7 @@ const posts = await getPublishedPosts();
 
     <!-- Blog Posts -->
     <section>
-      <h2 class="mb-4">Neueste Beiträge</h2>
+      <h2 class="section-title">Neueste Beiträge</h2>
       <div class="posts-grid">
         {posts.map((post) => <PostCard post={post} />)}
       </div>
