@@ -1,0 +1,18 @@
+---
+import { url, GITHUB_URL, EMAIL } from '../lib/url';
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; {year} Philipp Kurrle. Built with <a href="https://astro.build">Astro</a>.</p>
+      <div class="footer-links">
+        <a href={url('/feed.xml')}>RSS Feed</a>
+        <a href={`mailto:${EMAIL}`}>Kontakt</a>
+        <a href={GITHUB_URL} target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</footer>

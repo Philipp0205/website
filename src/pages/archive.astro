@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPublishedPosts, postPath, formatMonth, formatDay } from '../lib/posts';
+import type { Post } from '../lib/posts';
+import { url } from '../lib/url';
+
+const posts = await getPublishedPosts();
+
+// Group by month, newest first (posts are already sorted).
+const groups: { label: string; posts: Post[] }[] = [];
+for (const post of posts) {
+  const label = formatMonth(post.data.date);
+  const last = groups[groups.length - 1];
+  if (last && last.label === label) last.posts.push(post);
+  else groups.push({ label, posts: [post] });
+}
+---
+
+<BaseLayout title="Archiv" nav="archive">
+  <div class="container-narrow">
+    <header class="page-header">
+      <h1>Archiv</h1>
+      <p class="description">Alle Blogbeiträge chronologisch sortiert</p>
+    </header>
+
+    {
+      groups.map((group) => (
+        <section class="archive-section">
+          <h2>{group.label}</h2>
+          <ul class="archive-list">
+            {group.posts.map((post) => (
+              <li>
+                <span class="date">{formatDay(post.data.date)}</span>
+                <a href={url(postPath(post))}>{post.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</BaseLayout>

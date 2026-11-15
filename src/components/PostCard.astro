@@ -1,0 +1,33 @@
+---
+import { url } from '../lib/url';
+import { postPath, formatDate } from '../lib/posts';
+import type { Post } from '../lib/posts';
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="post-card">
+  <div class="post-meta">
+    <span class="post-date">
+      {formatDate(post.data.date)}
+    </span>
+    {
+      post.data.tags.length > 0 && (
+        <div class="post-tags">
+          {post.data.tags.map((tag) => (
+            <a class="tag" href={url(`/tags/${tag}/`)}>{tag}</a>
+          ))}
+        </div>
+      )
+    }
+  </div>
+  <h2><a href={url(postPath(post))}>{post.data.title}</a></h2>
+  {post.data.description && <p class="post-excerpt">{post.data.description}</p>}
+  <a href={url(postPath(post))} class="read-more">
+    Weiterlesen: {post.data.title}
+  </a>
+</article>

@@ -1,0 +1,97 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { url } from '../lib/url';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Site-absolute path of the og image. */
+  image?: string;
+  type?: 'website' | 'article';
+  /** Nav entry to highlight. */
+  nav?: 'blog' | 'about' | 'archive' | 'projects';
+  noindex?: boolean;
+}
+
+const SITE_TITLE = 'Philipp Kurrle';
+const DEFAULT_DESCRIPTION = 'Personal Blog von Philipp Kurrle - Softwareentwickler aus Stuttgart';
+
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  image = '/about/philipp.jpg',
+  type = 'website',
+  nav,
+  noindex = false,
+} = Astro.props;
+
+const fullTitle = title && title !== SITE_TITLE ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL(url(image), Astro.site).href;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Philipp Kurrle" />
+    <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {!noindex && <link rel="canonical" href={canonical} />}
+
+    <meta property="og:site_name" content={SITE_TITLE} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title ?? SITE_TITLE} />
+    <meta property="og:description" content={description} />
+    {!noindex && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="de_DE" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" href={url('/favicon.ico')} sizes="any" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href={url('/feed.xml')} />
+
+    <!-- Apply the saved/system theme before first paint to avoid a flash. -->
+    <script is:inline>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'dark' || saved === 'light') {
+            document.documentElement.dataset.theme = saved;
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <Header active={nav} />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <script is:inline>
+      document.getElementById('menuToggle').addEventListener('click', function () {
+        var links = document.getElementById('navLinks');
+        var open = links.classList.toggle('active');
+        this.setAttribute('aria-expanded', String(open));
+      });
+      document.getElementById('themeToggle').addEventListener('click', function () {
+        var root = document.documentElement;
+        var current =
+          root.dataset.theme ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var next = current === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try {
+          localStorage.setItem('theme', next);
+        } catch (e) {}
+      });
+    </script>
+  </body>
+</html>

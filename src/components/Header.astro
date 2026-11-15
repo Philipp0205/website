@@ -1,0 +1,53 @@
+---
+import { url } from '../lib/url';
+
+interface Props {
+  active?: 'blog' | 'about' | 'archive' | 'projects';
+}
+
+const { active } = Astro.props;
+
+const links = [
+  { key: 'blog', label: 'Blog', href: '/' },
+  { key: 'about', label: 'Über mich', href: '/about/' },
+  { key: 'archive', label: 'Archiv', href: '/archive/' },
+  { key: 'projects', label: 'Projekte', href: '/projects/' },
+  { key: 'rss', label: 'RSS', href: '/feed.xml' },
+] as const;
+---
+
+<nav class="navbar">
+  <div class="container">
+    <a href={url('/')} class="navbar-brand">
+      Philipp Kurrle
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={url(link.href)}
+              class={link.key === active ? 'active' : undefined}
+              aria-current={link.key === active ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Farbschema wechseln" title="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zM2 13h2a1 1 0 100-2H2a1 1 0 100 2zm18 0h2a1 1 0 100-2h-2a1 1 0 100 2zM11 2v2a1 1 0 102 0V2a1 1 0 10-2 0zm0 18v2a1 1 0 102 0v-2a1 1 0 10-2 0zM5.99 4.58a1 1 0 10-1.41 1.41l1.06 1.06a1 1 0 001.41-1.41L5.99 4.58zm12.37 12.37a1 1 0 10-1.41 1.41l1.06 1.06a1 1 0 001.41-1.41l-1.06-1.06zm1.06-10.96a1 1 0 10-1.41-1.41l-1.06 1.06a1 1 0 001.41 1.41l1.06-1.06zM7.05 18.36a1 1 0 10-1.41-1.41l-1.06 1.06a1 1 0 001.41 1.41l1.06-1.06z"></path></svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>

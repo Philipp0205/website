@@ -1,11 +1,21 @@
-# JBake
-.cache/
-# Note: output/ is committed for GitHub Pages deployment
+# build output
+dist/
+.astro/
+node_modules/
+
+# playwright
+test-results/
+playwright-report/
+
+# env
+.env
+.env.*
 
 # IDE
 .project
 .settings/
 .classpath
+.vaadin/
 *.iml
 .idea/
 
